@@ -1,0 +1,10 @@
+.App {
+  padding: 0;
+}
+.App > div {
+  margin: 0.9em 0 2em;
+  padding: 0.8em 1.8em;
+  border-radius: 8px;
+  min-height: 90vh;
+  background-color: #fffef7;
+}

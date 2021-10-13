@@ -1,0 +1,21 @@
+.Top {
+  padding: 0 0 1em;
+}
+
+.Top h3 {
+  font-size: 1em;
+}
+
+.Top pre {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  padding: 0.3em 0.8em;
+  margin: 4px 0;
+}
+
+.Top section > p {
+  margin-left: 0.79em;
+}
+
+.Top .lang-ja {
+  font-size: 0.81rem;
+}

@@ -1,30 +1,39 @@
-import React, { FormEventHandler, useEffect, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 
 import { useAppContext } from '../../store/AppContext';
-import { EditForm } from './EditForm';
 import { Task } from '../../store/TaskStore';
 
-export const AddTask: React.FC = () => {
+import { EditForm } from './EditForm';
+
+export const EditTask: React.FC = () => {
   const { header, tasks, progress } = useAppContext();
   const history = useHistory();
+  const { index: indexStr } = useParams<{ index: string }>();
+
+  const index = Number(indexStr);
+  const task = tasks.list[index];
 
   useEffect(() => {
-    header.update({ subtitle: 'Add new task' });
+    header.update({ subtitle: `Edit task #${index}` });
   }, [header]);
 
   const onSubmit = (task: Task) => {
     progress.update({ inProgress: true });
-    tasks.add(task);
+    tasks.replace(index, task);
     window.setTimeout(() => {
       progress.update({ inProgress: false });
-      history.push('/tasks');
-    }, 600);
+      history.push('/tasks/list');
+    }, 100);
   };
+
+  if (!task) {
+    return null;
+  }
 
   return (
     <div>
-      <EditForm onSubmit={onSubmit} />
+      <EditForm onSubmit={onSubmit} initialValue={task} />
     </div>
   );
 };

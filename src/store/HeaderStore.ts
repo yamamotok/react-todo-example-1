@@ -1,8 +1,8 @@
 import { action, makeObservable, observable } from 'mobx';
 
-export class HeaderContext {
-  title: string = 'Demo page';
-  subtitle: string = '';
+export class HeaderStore {
+  title = 'Demo page';
+  subtitle = 'React + mobx';
 
   constructor() {
     makeObservable(this, {
@@ -12,7 +12,7 @@ export class HeaderContext {
     });
   }
 
-  update(newValue: Partial<HeaderContext>): void {
+  update(newValue: Partial<HeaderStore>): void {
     this.title = newValue.title ?? this.title;
     this.subtitle = newValue.subtitle ?? this.subtitle;
   }

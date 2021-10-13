@@ -1,0 +1,13 @@
+.Header {
+  margin-bottom: 2em;
+}
+
+.Header h1 {
+  font-size: 1.85em;
+}
+
+.Header h2 {
+  font-size: 1em;
+  color: #c0bdb5;
+  margin-left: 0.2em;
+}

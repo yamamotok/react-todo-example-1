@@ -1,0 +1,17 @@
+.Tasks .card-body {
+}
+
+.Tasks .card-body > p.title {
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.Tasks .card-body > p.description {
+  font-size: 0.9rem;
+  margin-bottom: 1.6rem;
+}
+
+.Tasks .card-body.done {
+  opacity: 0.55;
+}
