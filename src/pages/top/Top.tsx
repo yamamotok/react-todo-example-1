@@ -106,6 +106,13 @@ export const Top: React.FC = observer(() => {
 
   return (
     <div className="Top">
+      <section>
+        <p>
+          No data is sent anywhere. Since everything is only in the browser&rsquo;s memory, the data
+          is lost when the page is reloaded.
+        </p>
+      </section>
+
       <TechStack />
       <Tips />
     </div>
